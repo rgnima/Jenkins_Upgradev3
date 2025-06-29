@@ -13,21 +13,21 @@ pipeline {
                     agent any
                     steps {
                         echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
-                        sh 'sleep 10'
+                        sh 'sleep 5'
                     }
                 }
                 stage('linux-amd64') {
                     agent any
                     steps {
                         echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
-                        sh 'sleep 20'
+                        sh 'sleep 5'
                     }
                 }
                 stage('windows-amd64') {
-                    agent any
+//                    agent any
                     steps {
                         echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
-                        sh 'sleep 30'
+                        sh 'sleep 5'
                     }
                 }
             }
