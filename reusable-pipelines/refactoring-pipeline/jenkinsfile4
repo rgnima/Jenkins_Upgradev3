@@ -35,7 +35,7 @@ pipeline {
                 echo "Building version: ${INT_VERSION} with suffix: ${VERSION_SUFFIX}"
                 echo 'Mention your Application Build Code here!!!'
                 dir('./java-tomcat-sample') {
-                    packageApplication()
+                packageApplication()
                 }
             }
         }
@@ -71,6 +71,7 @@ void auditTools() {
         git version
         java -version
         mvn -version
+        echo "Audit tools completed successfully."
     '''
 }
 
@@ -79,5 +80,6 @@ void packageApplication() {
         mvn versions:set -DnewVersion="${VERSION_SUFFIX}"-SNAPSHOT
         mvn versions:update-child-modules
         mvn clean package
+        echo "Application packaged successfully."
     '''
 }
